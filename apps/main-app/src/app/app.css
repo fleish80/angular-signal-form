@@ -1,0 +1,13 @@
+mat-toolbar {
+  display: flex;
+  gap: 12px;
+}
+
+.layout {
+  height: calc(100vh - 64px);
+}
+
+.content {
+  padding: 32px 40px;
+  max-width: 900px;
+}

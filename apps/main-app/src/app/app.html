@@ -1,0 +1,86 @@
+<!-- App shell: each sidenav link has a tooltip that summarizes what that topic teaches. -->
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="sidenav.toggle()" matTooltip="Open or close the topic list" matTooltipPosition="below">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Signal Forms</span>
+  <mat-chip highlighted>Experimental</mat-chip>
+</mat-toolbar>
+
+<mat-sidenav-container class="layout">
+  <mat-sidenav #sidenav mode="side" opened>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
+        matTooltip="Overview of all topics with short descriptions; start here to pick a learning path.">
+        <mat-icon matListItemIcon>home</mat-icon>
+        <span>Home</span>
+      </a>
+
+      <a mat-list-item routerLink="/basic-form" routerLinkActive="active-link"
+        matTooltip="Wire a signal-backed model to inputs with form(), FormField, and [formField]. This is the minimal mental model for everything else.">
+        1. Basic Form
+      </a>
+      <a mat-list-item routerLink="/form-model" routerLinkActive="active-link"
+        matTooltip="Treat the WritableSignal as source of truth: nested paths, programmatic updates, and computed values that stay in sync with the form.">
+        2. Form Model
+      </a>
+      <a mat-list-item routerLink="/built-in-validators" routerLinkActive="active-link"
+        matTooltip="Declarative rules (required, email, min/max, lengths, pattern) in the schema callback; read errors and form.valid() from signals.">
+        3. Built-in Validators
+      </a>
+      <a mat-list-item routerLink="/custom-validators" routerLinkActive="active-link"
+        matTooltip="validate() for arbitrary rules; extract reusable functions that take SchemaPath like the built-ins.">
+        4. Custom Validators
+      </a>
+      <a mat-list-item routerLink="/cross-field-validation" routerLinkActive="active-link"
+        matTooltip="valueOf() inside validate() reads other fields reactively—classic pattern for confirm password and dependent rules.">
+        5. Cross-Field Validation
+      </a>
+      <a mat-list-item routerLink="/field-state" routerLinkActive="active-link"
+        matTooltip="Per-field and form-level touched, dirty, valid, invalid, and errors—signals you can bind for UX and debugging.">
+        6. Field State
+      </a>
+      <a mat-list-item routerLink="/conditional-fields" routerLinkActive="active-link"
+        matTooltip="disabled(), hidden(), readonly() with reactive conditions and optional messages—no imperative enable/disable glue.">
+        7. Conditional Fields
+      </a>
+      <a mat-list-item routerLink="/form-submission" routerLinkActive="active-link"
+        matTooltip="submit() marks fields touched then runs your async callback only if valid—aligns validation UX with the submit action.">
+        8. Form Submission
+      </a>
+      <a mat-list-item routerLink="/arrays-and-collections" routerLinkActive="active-link"
+        matTooltip="Array models in the signal, @for over rows, applyEach() to run the same field rules on every item.">
+        9. Arrays & Collections
+      </a>
+      <a mat-list-item routerLink="/schema-composition" routerLinkActive="active-link"
+        matTooltip="Reuse schema functions for shared shapes (e.g. Contact) on nested objects and array elements via apply / applyEach.">
+        10. Schema Composition
+      </a>
+      <a mat-list-item routerLink="/custom-controls" routerLinkActive="active-link"
+        matTooltip="FormValueControl and FormCheckboxControl let custom components participate in [formField] without ControlValueAccessor.">
+        11. Custom Controls
+      </a>
+
+      <a mat-list-item routerLink="/debounce" routerLinkActive="active-link"
+        matTooltip="debounce() delays syncing control input to the model—useful for search and expensive derived work; compare with immediate binding.">
+        12. Debounce
+      </a>
+      <a mat-list-item routerLink="/async-validation" routerLinkActive="active-link"
+        matTooltip="Async checks and pending(): validate() can resolve over time; the UI can show spinners while the field is pending.">
+        13. Async Validation
+      </a>
+      <a mat-list-item routerLink="/metadata" routerLinkActive="active-link"
+        matTooltip="metadata() and createMetadataKey() attach hints and data; built-in validators also expose constraint signals like min/max.">
+        14. Metadata
+      </a>
+      <a mat-list-item routerLink="/zod-integration" routerLinkActive="active-link"
+        matTooltip="validateStandardSchema() plugs in Zod or any Standard Schema library; combine with native validate() for dynamic rules.">
+        15. Zod Integration
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="content">
+    <router-outlet />
+  </mat-sidenav-content>
+</mat-sidenav-container>
