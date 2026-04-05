@@ -95,5 +95,8 @@ export class Home {
     { num: '13', path: '/async-validation', name: 'Async Validation', desc: 'Long-running checks: pending() while a Promise-based rule resolves (demo + patterns).' },
     { num: '14', path: '/metadata', name: 'Metadata', desc: 'metadata() + keys for hints; validators publish min, max, required, lengths as signals.' },
     { num: '15', path: '/zod-integration', name: 'Zod Integration', desc: 'validateStandardSchema() for Zod/Standard Schema; mix with native validate() when needed.' },
+    { num: '16', path: '/apply-when-value', name: 'Apply When Value', desc: 'Gate a group of validators on the form\'s own value with one predicate—entire schema activates or deactivates.' },
+    { num: '17', path: '/apply-when', name: 'Apply When', desc: 'Use valueOf() to read sibling fields reactively; apply a schema to a nested subtree or leaf on cross-field conditions.' },
+    { num: '18', path: '/apply-schema', name: 'Apply Schema', desc: 'schema() creates a reusable Schema object; apply() attaches it to multiple subtrees—same addressSchema for billing and shipping.' },
   ];
 }

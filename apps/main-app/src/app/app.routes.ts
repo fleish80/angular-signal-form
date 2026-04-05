@@ -85,4 +85,19 @@ export const appRoutes: Route[] = [
     loadComponent: () =>
       import('./topics/zod-integration').then((m) => m.ZodIntegration),
   },
+  {
+    path: 'apply-when-value',
+    loadComponent: () =>
+      import('./topics/apply-when-value').then((m) => m.ApplyWhenValueTopic),
+  },
+  {
+    path: 'apply-when',
+    loadComponent: () =>
+      import('./topics/apply-when').then((m) => m.ApplyWhenTopic),
+  },
+  {
+    path: 'apply-schema',
+    loadComponent: () =>
+      import('./topics/apply-schema').then((m) => m.ApplySchemaTopic),
+  },
 ];

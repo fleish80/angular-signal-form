@@ -77,6 +77,18 @@
         matTooltip="validateStandardSchema() plugs in Zod or any Standard Schema library; combine with native validate() for dynamic rules.">
         15. Zod Integration
       </a>
+      <a mat-list-item routerLink="/apply-when-value" routerLinkActive="active-link"
+        matTooltip="applyWhenValue() conditionally applies an entire schema based on the form's own value—gate a group of validators with one predicate.">
+        16. Apply When Value
+      </a>
+      <a mat-list-item routerLink="/apply-when" routerLinkActive="active-link"
+        matTooltip="applyWhen() uses valueOf() to read sibling fields reactively—apply a schema to a nested subtree or leaf based on cross-field conditions.">
+        17. Apply When
+      </a>
+      <a mat-list-item routerLink="/apply-schema" routerLinkActive="active-link"
+        matTooltip="schema() creates a reusable Schema object; apply() attaches it to multiple subtrees—same rules, different paths.">
+        18. Apply Schema
+      </a>
     </mat-nav-list>
   </mat-sidenav>
 
