@@ -3,6 +3,7 @@
  * The root form() call also exposes aggregate touched/dirty/valid for buttons and summaries.
  */
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { form, FormField, required, email } from '@angular/forms/signals';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
@@ -15,7 +16,7 @@ interface ContactData {
 
 @Component({
   selector: 'df-field-state',
-  imports: [FormField, MatFormField, MatLabel, MatInput, MatCard, MatCardContent, MatCardHeader, MatCardTitle],
+  imports: [FormField, RouterLink, MatFormField, MatLabel, MatInput, MatCard, MatCardContent, MatCardHeader, MatCardTitle],
   changeDetection: ChangeDetectionStrategy.OnPush,
   styles: `
     h2 { margin: 0 0 4px; }
@@ -38,6 +39,8 @@ interface ContactData {
     <p class="topic-remark">
       <strong>Touched</strong> usually flips on blur or after submit; <strong>dirty</strong> means the value diverged from the initial snapshot—handy for “unsaved changes” warnings.
       The inspector table is a live readout of the same signals you would use for disabling Save, showing badges, or debugging. Form-level <code>valid</code> is false if any field is invalid.
+      Reactive forms used to mirror this state as automatic <code>ng-*</code> CSS classes on controls; Signal Forms need
+      <a routerLink="/ng-status-classes">topic 19</a> (or <a routerLink="/custom-state-classes">20</a> for custom names).
     </p>
 
     <div class="layout">

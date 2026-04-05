@@ -1,4 +1,6 @@
 import { Route } from '@angular/router';
+import { provideSignalFormsConfig } from '@angular/forms/signals';
+import { NG_STATUS_CLASSES } from '@angular/forms/signals/compat';
 
 /** Lazy routes: each path loads one standalone topic component that demonstrates part of `@angular/forms/signals`. */
 export const appRoutes: Route[] = [
@@ -99,5 +101,20 @@ export const appRoutes: Route[] = [
     path: 'apply-schema',
     loadComponent: () =>
       import('./topics/apply-schema').then((m) => m.ApplySchemaTopic),
+  },
+  {
+    path: 'ng-status-classes',
+    loadComponent: () =>
+      import('./topics/ng-status-classes').then((m) => m.NgStatusClassesTopic),
+    providers: [
+      ...provideSignalFormsConfig({ classes: NG_STATUS_CLASSES }),
+    ],
+  },
+  {
+    path: 'custom-state-classes',
+    loadComponent: () =>
+      import('./topics/custom-state-classes').then(
+        (m) => m.CustomStateClassesTopic,
+      ),
   },
 ];

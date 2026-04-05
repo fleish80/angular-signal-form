@@ -98,5 +98,7 @@ export class Home {
     { num: '16', path: '/apply-when-value', name: 'Apply When Value', desc: 'Gate a group of validators on the form\'s own value with one predicate—entire schema activates or deactivates.' },
     { num: '17', path: '/apply-when', name: 'Apply When', desc: 'Use valueOf() to read sibling fields reactively; apply a schema to a nested subtree or leaf on cross-field conditions.' },
     { num: '18', path: '/apply-schema', name: 'Apply Schema', desc: 'schema() creates a reusable Schema object; apply() attaches it to multiple subtrees—same addressSchema for billing and shipping.' },
+    { num: '19', path: '/ng-status-classes', name: 'NG status classes', desc: 'provideSignalFormsConfig + NG_STATUS_CLASSES: ng-touched, ng-invalid, ng-pending on [formField] hosts like reactive forms.' },
+    { num: '20', path: '/custom-state-classes', name: 'Custom state classes', desc: 'Your own global class map and predicates—e.g. app-invalid only when invalid and touched.' },
   ];
 }
