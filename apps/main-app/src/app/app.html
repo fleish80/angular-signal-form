@@ -97,6 +97,27 @@
         matTooltip="Replace ng-* with branded classes; predicates receive FormField—e.g. invalid styling only after touched.">
         20. Custom state classes
       </a>
+      <a mat-list-item routerLink="/server-errors" routerLinkActive="active-link"
+        matTooltip="submit() action returns field-targeted errors from the server; submitting() drives loading state.">
+        21. Server Errors
+      </a>
+
+      <a mat-list-item routerLink="/focus-controls" routerLinkActive="active-link"
+        matTooltip="focusBoundControl() on FieldTree nodes moves browser focus—no ViewChild or ElementRef needed.">
+        22. Focus Controls
+      </a>
+      <a mat-list-item routerLink="/form-root" routerLinkActive="active-link"
+        matTooltip="[formRoot] directive replaces manual (submit) + preventDefault + submit() wiring with one attribute.">
+        23. formRoot Directive
+      </a>
+      <a mat-list-item routerLink="/compat-bridge" routerLinkActive="active-link"
+        matTooltip="SignalFormControl drops into a FormGroup; compatForm wraps a FormControl in a signal model—migrate incrementally.">
+        24. Compat Bridge
+      </a>
+      <a mat-list-item routerLink="/structuring-large-forms" routerLinkActive="active-link"
+        matTooltip="Runnable profile form from Brian Treese's talk: section schema builders + FieldTree slices passed into child components.">
+        25. Structuring large forms (talk)
+      </a>
     </mat-nav-list>
   </mat-sidenav>
 

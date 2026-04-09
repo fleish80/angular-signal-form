@@ -16,19 +16,24 @@ import { MatCard, MatCardContent, MatCardHeader, MatCardTitle } from '@angular/m
   imports: [MatIcon],
   styles: `
     :host { display: inline-flex; gap: 2px; }
-    .star { cursor: pointer; transition: color 0.1s; user-select: none; }
-    .star.filled { color: #ffc107; }
-    .star:not(.filled) { color: #ccc; }
-    .star.disabled { cursor: not-allowed; opacity: 0.5; }
+    button.star {
+      border: none; padding: 0; margin: 0; background: transparent; line-height: 0;
+      cursor: pointer; transition: color 0.1s; user-select: none;
+    }
+    button.star:disabled { cursor: not-allowed; opacity: 0.5; }
+    button.star mat-icon.filled { color: #ffc107; }
+    button.star mat-icon:not(.filled) { color: #ccc; }
   `,
   template: `
     @for (star of stars(); track $index) {
-      <mat-icon
+      <button
+        type="button"
         class="star"
-        [class.filled]="star.filled"
-        [class.disabled]="disabled()"
-        (click)="!disabled() && setValue(star.value)"
-      >{{ star.filled ? 'star' : 'star_border' }}</mat-icon>
+        [disabled]="disabled()"
+        (click)="setValue(star.value)"
+      >
+        <mat-icon [class.filled]="star.filled">{{ star.filled ? 'star' : 'star_border' }}</mat-icon>
+      </button>
     }
   `,
 })
@@ -49,16 +54,27 @@ export class StarRating implements FormValueControl<number> {
   changeDetection: ChangeDetectionStrategy.OnPush,
   styles: `
     :host { display: inline-block; }
-    .toggle { width: 44px; height: 24px; border-radius: 12px; background: #ccc; position: relative; cursor: pointer; transition: background 0.2s; }
-    .toggle.active { background: var(--mat-sys-primary); }
-    .toggle.disabled { opacity: 0.5; cursor: not-allowed; }
+    button.toggle {
+      width: 44px; height: 24px; border: none; padding: 0; margin: 0;
+      border-radius: 12px; background: #ccc; position: relative; cursor: pointer; transition: background 0.2s;
+    }
+    button.toggle.active { background: var(--mat-sys-primary); }
+    button.toggle:disabled { opacity: 0.5; cursor: not-allowed; }
     .knob { width: 20px; height: 20px; border-radius: 50%; background: white; position: absolute; top: 2px; left: 2px; transition: left 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
-    .toggle.active .knob { left: 22px; }
+    button.toggle.active .knob { left: 22px; }
   `,
   template: `
-    <div class="toggle" [class.active]="checked()" [class.disabled]="disabled()" (click)="!disabled() && toggle()">
-      <div class="knob"></div>
-    </div>
+    <button
+      type="button"
+      class="toggle"
+      [class.active]="checked()"
+      [disabled]="disabled()"
+      (click)="toggle()"
+      [attr.aria-checked]="checked()"
+      role="switch"
+    >
+      <span class="knob"></span>
+    </button>
   `,
 })
 export class ToggleSwitch implements FormCheckboxControl {

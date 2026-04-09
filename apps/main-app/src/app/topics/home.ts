@@ -100,5 +100,10 @@ export class Home {
     { num: '18', path: '/apply-schema', name: 'Apply Schema', desc: 'schema() creates a reusable Schema object; apply() attaches it to multiple subtrees—same addressSchema for billing and shipping.' },
     { num: '19', path: '/ng-status-classes', name: 'NG status classes', desc: 'provideSignalFormsConfig + NG_STATUS_CLASSES: ng-touched, ng-invalid, ng-pending on [formField] hosts like reactive forms.' },
     { num: '20', path: '/custom-state-classes', name: 'Custom state classes', desc: 'Your own global class map and predicates—e.g. app-invalid only when invalid and touched.' },
+    { num: '21', path: '/server-errors', name: 'Server Errors', desc: 'submit() action returns field-targeted server errors; submitting() signal for loading state.' },
+    { num: '22', path: '/focus-controls', name: 'Focus Controls', desc: 'focusBoundControl() on FieldTree nodes—no ViewChild/ElementRef; includes "focus first error" pattern.' },
+    { num: '23', path: '/form-root', name: 'formRoot Directive', desc: '[formRoot] makes submission declarative: no manual (submit) handler or preventDefault needed.' },
+    { num: '24', path: '/compat-bridge', name: 'Compat Bridge', desc: 'SignalFormControl inside a FormGroup, or compatForm wrapping a FormControl—migrate incrementally.' },
+    { num: '25', path: '/structuring-large-forms', name: 'Structuring large forms (talk)', desc: 'Profile form from the talk: model factories, build*Section schema, child components with FieldTree slices.' },
   ];
 }

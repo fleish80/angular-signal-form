@@ -1,13 +1,27 @@
+:host {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 mat-toolbar {
   display: flex;
+  flex-shrink: 0;
   gap: 12px;
 }
 
 .layout {
-  height: calc(100vh - 64px);
+  flex: 1 1 auto;
+  min-height: 0;
 }
 
 .content {
-  padding: 32px 40px;
+  box-sizing: border-box;
+  height: 100%;
   max-width: 900px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 32px 40px 48px;
+  -webkit-overflow-scrolling: touch;
 }

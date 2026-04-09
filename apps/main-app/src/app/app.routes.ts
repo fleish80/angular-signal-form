@@ -117,4 +117,31 @@ export const appRoutes: Route[] = [
         (m) => m.CustomStateClassesTopic,
       ),
   },
+  {
+    path: 'server-errors',
+    loadComponent: () =>
+      import('./topics/server-errors').then((m) => m.ServerErrors),
+  },
+  {
+    path: 'focus-controls',
+    loadComponent: () =>
+      import('./topics/focus-controls').then((m) => m.FocusControls),
+  },
+  {
+    path: 'form-root',
+    loadComponent: () =>
+      import('./topics/form-root').then((m) => m.FormRootTopic),
+  },
+  {
+    path: 'compat-bridge',
+    loadComponent: () =>
+      import('./topics/form-composition').then((m) => m.CompatBridge),
+  },
+  {
+    path: 'structuring-large-forms',
+    loadComponent: () =>
+      import('./topics/structuring-large-forms/structuring-large-forms-topic').then(
+        (m) => m.StructuringLargeFormsTopic,
+      ),
+  },
 ];
